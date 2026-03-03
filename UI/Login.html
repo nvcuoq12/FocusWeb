@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <button>Đăng nhập</button>
+        <button>Đăng ký</button>
+      </div>
+      <div id="loginForm">
+        <div>
+          <h1>Welcome</h1>
+          <p>Sign in by email</p>
+        </div>
+        <form>
+          <div>
+            <div>
+              <label for="email">Email của bạn </label> <br />
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div>
+              <label for="password">Mật khẩu</label> <br />
+              <input type="password" id="password" name="pasword" required />
+            </div>
+            <div>
+              <button type="submit" value="submit">Đăng nhập</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div id="registeForm" class="hidden">
+        <div>
+          <h1>Bắt đầu hành trình</h1>
+          <p>Tạo tài khoản mới để cá nhân hóa lộ trình học tập của bạn</p>
+        </div>
+        <form>
+          <div>
+            <div>
+              <label for="username">Họ và tên</label><br />
+              <input type="text" id="username" name="username" required />
+            </div>
+            <div>
+              <label for="email">Địa chỉ email</label> <br />
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div>
+              <label for="password">Mật khẩu</label> <br />
+              <input type="password" id="password" name="pasword" required />
+            </div>
+            <div>
+              <label for="confirmPassword">Xác nhận mật khẩu</label>
+              <input type="password" id="confirmPassword" required />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

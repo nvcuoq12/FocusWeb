@@ -4,25 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="Css/hiddencomponent.css" />
   </head>
   <body>
     <span>
-      <button onclick="setTimer5()" class="">.</button>
-      <button onclick="setTimer10()" class="">.</button>
-      <button onclick="setTimer25()" class="">.</button>
+      <button onclick="setTimer5()" class="active">.</button>
+      <button onclick="setTimer10()" class="active">.</button>
+      <button onclick="setTimer25()" class="active">.</button>
     </span>
     <span>
       <div id="timer">25:00</div>
     </span>
     <span>
-      <button onclick="addOne()" class="">+ 1</button>
-      <button onclick="addFive()" class="">+ 5</button>
-      <button onclick="addTwentyFive()" class="">+ 25</button>
+      <button onclick="addOne()" class="active">+ 1</button>
+      <button onclick="addFive()" class="active">+ 5</button>
+      <button onclick="addTwentyFive()" class="active">+ 25</button>
     </span>
     <span>
-      <button onclick="start()">Start</button>
-      <button onclick="pause()" style="display: none">Pause</button>
-      <button onclick="skip()" style="display: none">Skip</button>
+      <button onclick="start()" class = "active">Start</button>
+      <button onclick="pause()" class="hidden1">Pause</button>
+      <button onclick="skip()" class="hidden1">Skip</button>
     </span>
     <script>
       let minutes = 25;
@@ -67,17 +68,15 @@
       }
       function start() {
         if (intervalId !== null) return;
-        document.querySelector("button[onclick='start()']").style.display =
-          "none";
-        document.querySelector("button[onclick = 'pause()']").style.display =
-          "inline-block";
-        document.querySelector("button[onclick = 'skip()']").style.display =
-          "inline-block";
+        
         time = minutes * 60;
+        document.getElementById("active").classList.add("Css/active.css");
+        document.getElementById("hiddencomponent").classList.remove("Css/hiddencomponent.css")
         intervalId = setInterval(function () {
           if (time <= 0) {
             clearInterval(intervalId);
             intervalId = null;
+            console.allert("End Season")
             return;
           }
           time--;
