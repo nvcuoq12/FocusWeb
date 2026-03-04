@@ -1,25 +1,22 @@
-const password = document.getElementById("regPassword");
-const comfirmPass = document.getElementById("confirmPassword");
-const errorText = document.getElementById("regError");
+document.addEventListener("DOMContentLoaded", function () {
+  const password = document.getElementById("regPassword");
+  const confirmPass = document.getElementById("confirmPassword");
+  const errorText = document.getElementById("regError");
 
-// KiemTraRealTime
-comfirmPass.addEventListener("input", function () {
-  if (password.value != comfirmPass.value) {
-    errorText.innerText = "Mật khẩu xác nhận ko khớp!";
-  } else {
-    errorText.innerText = "";
-  }
-});
-
-//Kiem tra khi submit
-document
-  .getElementById("registerForm")
-  .addEventListener("submit", function (e) {
-    e.preventDefault(); // chan gui form
-
-    if (password.value != comfirmPass.value) {
-      errorText.innerText = "Mật khẩu xác nhận không khớp";
-      return;
+  confirmPass.addEventListener("input", function () {
+    if (password.value !== confirmPass.value) {
+      errorText.innerText = "Mật khẩu xác nhận không khớp!";
+    } else {
+      errorText.innerText = "";
     }
-    alert("Đăng ký thành công!");
   });
+
+  document
+    .getElementById("registerForm")
+    .addEventListener("submit", function (e) {
+      if (password.value !== confirmPass.value) {
+        e.preventDefault();
+        errorText.innerText = "Mật khẩu xác nhận không khớp!";
+      }
+    });
+});
