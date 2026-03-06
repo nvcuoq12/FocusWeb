@@ -58,7 +58,7 @@ function resetTimer() {
   updateDisplay();
   resetButtons();
 
-  // HIỆN lại dots và + buttons
+  // Hiện lại các chức năng
   dotsContainer.classList.remove("hidden");
   addButtonsContainer.classList.remove("hidden");
 }
@@ -77,7 +77,7 @@ startBtn.onclick = function () {
   pauseBtn.classList.remove("hidden");
   skipBtn.classList.remove("hidden");
 
-  // ẨN dots và + buttons
+ // Ẩn các chức năng
   dotsContainer.classList.add("hidden");
   addButtonsContainer.classList.add("hidden");
 };

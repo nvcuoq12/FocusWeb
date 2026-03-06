@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const tagButton = document.getElementById("TagButton");
-  const dropdownMenu = document.querySelector(".dropdown-menu");
+
+  // Lấy đúng dropdown nằm ngay sau TagButton
+  const dropdownMenu = tagButton.nextElementSibling;
+
   const editModalElement = document.getElementById("editTagModal");
   const editInput = document.getElementById("editTagInput");
   const saveBtn = document.getElementById("saveTagBtn");
@@ -12,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const modal = new bootstrap.Modal(editModalElement);
 
   // MODAL OPEN
-  
   editModalElement.addEventListener("show.bs.modal", function (event) {
     const button = event.relatedTarget;
     currentMode = button?.getAttribute("data-mode");
@@ -30,22 +32,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  
-    dropdownMenu.addEventListener("click", async function (e) {
+  // DROPDOWN CLICK
+  dropdownMenu.addEventListener("click", function (e) {
     const tagItem = e.target.closest(".tag-item");
     if (!tagItem) return;
 
-    // EDIT 
-
-    // DELETE
-    
-    // SELECT TAG
+    // SELECT TAG (không bấm vào edit/delete)
     if (!e.target.closest(".tag-actions")) {
       const contentHTML = tagItem.querySelector(".tag-content").innerHTML;
       tagButton.innerHTML = contentHTML;
     }
-    // Save + Add
   });
-
-  
 });
